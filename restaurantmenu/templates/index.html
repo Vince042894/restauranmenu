@@ -183,110 +183,101 @@
         <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
 
           <li class="nav-item">
-            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-starters">
-              <h4>Starters</h4>
+            <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-breakfast">
+              <h4>Breakfast</h4>
             </a>
           </li><!-- End tab nav item -->
 
-          <li class="nav-item">
-            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast">
-              <h4>Breakfast</h4>
-            </a><!-- End tab nav item -->
-
-          </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
               <h4>Lunch</h4>
-            </a>
-          </li><!-- End tab nav item -->
+            </a><!-- End tab nav item -->
 
+          </li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-dinner">
               <h4>Dinner</h4>
             </a>
           </li><!-- End tab nav item -->
 
+          <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-dessert">
+              <h4>Dessert</h4>
+            </a>
+          </li><!-- End tab nav item -->
+
         </ul>
 
         <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-          <!-- Start Starter Menu Content -->
-          <div class="tab-pane fade active show" id="menu-starters">
 
-            <div class="tab-header text-center">
-              <p>Menu</p>
-              <h3>Starters</h3>
-            </div>
-
-
-            <div class="row gy-5">
-
-              <div class="col-lg-4 menu-item">
-                <a href="{% static 'assets/img/menu/menu-item-6.png'%}" class="glightbox"><img src="{%static 'assets/img/menu/menu-item-6.png'%}" class="menu-img img-fluid" alt=""></a>
-                <h4>Laboriosam Direva</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $9.95
-                </p>
-              </div><!-- Menu Item -->
-
-            </div>
-          </div>
-          <!-- End Starter Menu Content -->
-
-
-          <!-- Start Breakfast Menu Content -->
-          <div class="tab-pane fade" id="menu-breakfast">
-
+          <!-- Start breakfast Menu Content -->
+          <div class="tab-pane fade active show" id="menu-breakfast">
             <div class="tab-header text-center">
               <p>Menu</p>
               <h3>Breakfast</h3>
             </div>
 
             <div class="row gy-5">
-
-
+              <!-- Menu Item -->
+              {% for row in item_list %}
+              {% if row.meal_type == "breakfast" %}
               <div class="col-lg-4 menu-item">
                 <a href="{% static 'assets/img/menu/menu-item-6.png'%}" class="glightbox"><img src="{%static 'assets/img/menu/menu-item-6.png'%}" class="menu-img img-fluid" alt=""></a>
-                <h4>Laboriosam Direva</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $9.95
-                </p>
-              </div><!-- Menu Item -->
+
+                          <h4>{{ row.meal }}</h4>
+                            <p class="ingredients">
+                            {{ row.description }}
+                            </p>
+                            <p class="price">
+                            {{ row.price }}
+                            </p>
+
+
+              </div>
+                 {% endif %}
+               {% endfor %}
 
             </div>
           </div>
           <!-- End Breakfast Menu Content -->
-
 
           <!-- Start Lunch Menu Content -->
           <div class="tab-pane fade" id="menu-lunch">
 
             <div class="tab-header text-center">
               <p>Menu</p>
-              <h3>Lunch</h3>
+              <h3>lunch</h3>
             </div>
 
             <div class="row gy-5">
-
+              <!-- Menu Item -->
+              {% for row in item_list %}
+              {% if row.meal_type == "lunch" %}
               <div class="col-lg-4 menu-item">
                 <a href="{% static 'assets/img/menu/menu-item-6.png'%}" class="glightbox"><img src="{%static 'assets/img/menu/menu-item-6.png'%}" class="menu-img img-fluid" alt=""></a>
-                <h4>Laboriosam Direva</h4>
-                <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
-                </p>
-                <p class="price">
-                  $9.95
-                </p>
-              </div><!-- Menu Item -->
+
+                          <h4>{{ row.meal }}</h4>
+                            <p class="ingredients">
+                            {{ row.description }}
+                            </p>
+                            <p class="price">
+                            {{ row.price }}
+                            </p>
+
+
+              </div>
+                 {% endif %}
+               {% endfor %}
 
             </div>
           </div>
           <!-- End Lunch Menu Content -->
+
+
+
+
+
+
 
           <!-- Start Dinner Menu Content -->
           <div class="tab-pane fade" id="menu-dinner">
@@ -297,18 +288,53 @@
             </div>
 
             <div class="row gy-5">
+              <!-- Menu Item -->
+              {% for row in item_list %}
+              {% if row.meal_type == "dinner" %}
+              <div class="col-lg-4 menu-item">
+                <a href="{% static 'assets/img/menu/menu-item-6.png'%}" class="glightbox"><img src="{%static 'assets/img/menu/menu-item-6.png'%}" class="menu-img img-fluid" alt=""></a>
+
+                          <h4>{{ row.meal }}</h4>
+                            <p class="ingredients">
+                            {{ row.description }}
+                            </p>
+                            <p class="price">
+                            {{ row.price }}
+                            </p>
+
+
+              </div>
+                 {% endif %}
+               {% endfor %}
+
+            </div>
+          </div>
+          <!-- End Dinner Menu Content -->
+
+          <!-- Start Dinner Menu Content -->
+          <div class="tab-pane fade" id="menu-dessert">
+
+            <div class="tab-header text-center">
+              <p>Menu</p>
+              <h3>Dessert</h3>
+            </div>
+
+            <div class="row gy-5">
+               {% for row in item_list %}
+               {% if row.meal_type == "dessert" %}
 
               <div class="col-lg-4 menu-item">
                 <a href="{% static 'assets/img/menu/menu-item-6.png'%}" class="glightbox"><img src="{%static 'assets/img/menu/menu-item-6.png'%}" class="menu-img img-fluid" alt=""></a>
-                <h4>Laboriosam Direva</h4>
+                <h4>{{ row.meal }}</h4>
                 <p class="ingredients">
-                  Lorem, deren, trataro, filede, nerada
+                  {{ row.description }}
                 </p>
                 <p class="price">
-                  $9.95
+                  {{ row.price }}
                 </p>
               </div><!-- Menu Item -->
-
+                {% endif %}
+               {% endfor %}
             </div>
           </div>
           <!-- End Dinner Menu Content -->

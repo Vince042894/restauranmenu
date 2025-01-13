@@ -220,30 +220,21 @@
             <div class="row gy-5">
               <!-- Menu Item -->
               {% for row in item_list %}
-              {% if row.meal_type == "breakfast" %}
-              <div class="col-lg-4 menu-item">
-                <a href="{% static 'assets/img/menu/menu-item-6.png'%}" class="glightbox"><img src="{%static 'assets/img/menu/menu-item-6.png'%}" class="menu-img img-fluid" alt=""></a>
-
-                          <h4>{{ row.meal }}</h4>
-                            <p class="ingredients">
-                            {{ row.description }}
-                            </p>
-                            <p class="price">
-                            {{ row.price }}
-                            </p>
-
-
-              </div>
-                 {% endif %}
-               {% endfor %}
-
+                {% if row.meal_type == "breakfast" %}
+                  <div class="col-lg-4 menu-item">
+                    <a href="{% static 'assets/img/menu/menu-item-6.png'%}" class="glightbox"><img src="{%static 'assets/img/menu/menu-item-6.png'%}" class="menu-img img-fluid" alt=""></a>
+                    <h4>{{ row.meal }}</h4>
+                    <p class="ingredients">{{ row.description }}</p>
+                    <p class="price">P {{ row.price }}</p>
+                  </div>
+                {% endif %}
+              {% endfor %}
             </div>
           </div>
           <!-- End Breakfast Menu Content -->
 
           <!-- Start Lunch Menu Content -->
           <div class="tab-pane fade" id="menu-lunch">
-
             <div class="tab-header text-center">
               <p>Menu</p>
               <h3>lunch</h3>
@@ -252,36 +243,21 @@
             <div class="row gy-5">
               <!-- Menu Item -->
               {% for row in item_list %}
-              {% if row.meal_type == "lunch" %}
-              <div class="col-lg-4 menu-item">
-                <a href="{% static 'assets/img/menu/menu-item-6.png'%}" class="glightbox"><img src="{%static 'assets/img/menu/menu-item-6.png'%}" class="menu-img img-fluid" alt=""></a>
-
-                          <h4>{{ row.meal }}</h4>
-                            <p class="ingredients">
-                            {{ row.description }}
-                            </p>
-                            <p class="price">
-                            {{ row.price }}
-                            </p>
-
-
-              </div>
-                 {% endif %}
-               {% endfor %}
-
+                {% if row.meal_type == "lunch" %}
+                  <div class="col-lg-4 menu-item">
+                    <a href="{% static 'assets/img/menu/menu-item-6.png'%}" class="glightbox"><img src="{%static 'assets/img/menu/menu-item-6.png'%}" class="menu-img img-fluid" alt=""></a>
+                    <h4>{{ row.meal }}</h4>
+                    <p class="ingredients">{{ row.description }}</p>
+                    <p class="price">P {{ row.price }}</p>
+                  </div>
+                {% endif %}
+              {% endfor %}
             </div>
           </div>
           <!-- End Lunch Menu Content -->
 
-
-
-
-
-
-
           <!-- Start Dinner Menu Content -->
           <div class="tab-pane fade" id="menu-dinner">
-
             <div class="tab-header text-center">
               <p>Menu</p>
               <h3>Dinner</h3>
@@ -290,51 +266,37 @@
             <div class="row gy-5">
               <!-- Menu Item -->
               {% for row in item_list %}
-              {% if row.meal_type == "dinner" %}
-              <div class="col-lg-4 menu-item">
-                <a href="{% static 'assets/img/menu/menu-item-6.png'%}" class="glightbox"><img src="{%static 'assets/img/menu/menu-item-6.png'%}" class="menu-img img-fluid" alt=""></a>
-
-                          <h4>{{ row.meal }}</h4>
-                            <p class="ingredients">
-                            {{ row.description }}
-                            </p>
-                            <p class="price">
-                            {{ row.price }}
-                            </p>
-
-
-              </div>
-                 {% endif %}
-               {% endfor %}
-
+                {% if row.meal_type == "dinner" %}
+                  <div class="col-lg-4 menu-item">
+                    <a href="{% static 'assets/img/menu/menu-item-6.png'%}" class="glightbox"><img src="{%static 'assets/img/menu/menu-item-6.png'%}" class="menu-img img-fluid" alt=""></a>
+                    <h4>{{ row.meal }}</h4>
+                    <p class="ingredients">{{ row.description }}</p>
+                    <p class="price">P {{ row.price }}</p>
+                  </div>
+                {% endif %}
+              {% endfor %}
             </div>
           </div>
           <!-- End Dinner Menu Content -->
 
           <!-- Start Dinner Menu Content -->
           <div class="tab-pane fade" id="menu-dessert">
-
             <div class="tab-header text-center">
               <p>Menu</p>
               <h3>Dessert</h3>
             </div>
 
             <div class="row gy-5">
-               {% for row in item_list %}
-               {% if row.meal_type == "dessert" %}
-
-              <div class="col-lg-4 menu-item">
-                <a href="{% static 'assets/img/menu/menu-item-6.png'%}" class="glightbox"><img src="{%static 'assets/img/menu/menu-item-6.png'%}" class="menu-img img-fluid" alt=""></a>
-                <h4>{{ row.meal }}</h4>
-                <p class="ingredients">
-                  {{ row.description }}
-                </p>
-                <p class="price">
-                  {{ row.price }}
-                </p>
-              </div><!-- Menu Item -->
+              {% for row in item_list %}
+                {% if row.meal_type == "dessert" %}
+                  <div class="col-lg-4 menu-item">
+                    <a href="{% static 'assets/img/menu/menu-item-6.png'%}" class="glightbox"><img src="{%static 'assets/img/menu/menu-item-6.png'%}" class="menu-img img-fluid" alt=""></a>
+                    <h4>{{ row.meal }}</h4>
+                    <p class="ingredients">{{ row.description }}</p>
+                    <p class="price">P {{ row.price }}</p>
+                  </div>
                 {% endif %}
-               {% endfor %}
+              {% endfor %}
             </div>
           </div>
           <!-- End Dinner Menu Content -->
